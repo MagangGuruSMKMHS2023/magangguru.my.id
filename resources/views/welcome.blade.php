@@ -9,8 +9,6 @@
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
         <link href="https://fonts.bunny.net/css?family=figtree:400,600&display=swap" rel="stylesheet" />
-
-
     </head>
    <body>
     <header class="bg-cyan-600">
@@ -30,17 +28,11 @@
             </button>
           </div>
           <div class="hidden lg:flex lg:gap-x-12">
-
-
             <a href="/kelas" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Guru</a>
             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Nilai</a>
             <a href="#" class="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50">Mata Pelajaran</a>
           </div>
-
         </nav>
-
       </header>
-
     </body>
-
 </html>

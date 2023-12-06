@@ -16,6 +16,19 @@
     <button type="submit"  class="bg-blue-500 text-white px-4 py-1">Search</button>
 </form>
 <a href="/kelas/create" class="bg-green-500 text-white px-4 py-2 rounded-md inline-block mb-4 mx-5">Tambah</a>
+<a href="/nilai/pdf" onclick="exportPdf()" target="_blank" class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-8 mx-48" id="openPdfInNewTab">Export PDF</a>
+{{-- <script>
+    // Kirim permintaan ke server untuk menghasilkan PDF
+    fetch('{{ route("pdf.generate") }}')
+        .then(response => response.json())
+        .then(data => {
+            // Buka PDF di tab baru setelah menerima URL PDF sementara
+            window.open(data.url, '_blank');
+        })
+        .catch(error => console.error('Error:', error));
+</script> --}}
+
+
 <table class="table-auto w-full border border-gray-300">
     <tr>
         <td class="border border-gray-300 bg-gray-200 p-2">Id Kelas</td>

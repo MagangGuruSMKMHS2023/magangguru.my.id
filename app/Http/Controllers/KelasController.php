@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Kelas;
+use Elibyy\TCPDF\Facades\TCPDF;
 
 class KelasController extends Controller
 {
@@ -108,5 +109,36 @@ public function update (Request $request, $id_kelas){
 
 
     }
+
+
+    public function pdf(Request $request)    {
+        $filename = 'KelasSiswa.pdf';
+        // Ambil data kelas dari satu tabel
+        $kelas = kelas::all();
+        // Buat HTML hanya untuk tabel kelas
+        $html = '<table border="1">
+                    <tr>
+                        <th>ID</th>
+                        <th>NAma</th>
+                    </tr>';
+        foreach ($kelas as $data) {
+            $html .= '<tr>
+                        <td>' . $data->id_kelas . '</td>
+                        <td>' . $data->namakelas . '</td>
+                    </tr>';
+        }
+        $html .= '</table>';
+        $pdf = new TCPDF;
+        $pdf::SetTitle('KelasSiswa');
+        $pdf::AddPage('L', 'A4');
+        $pdf::writeHTML($html, true, false, true, false, '');
+        // // Simpan PDF sementara di server (opsional)
+        $pdfPath = public_path($filename);
+        $pdf::Output($pdfPath, 'F');
+
+        $pdf::Output($filename, 'I');  // tida new tab
+
+    }
+
 
 }

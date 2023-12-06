@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\GuruCetakController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,5 +27,8 @@ Route ::group(['middleware'=>['web']], function(){
     Route::put('/kelas/{id_kelas}',[KelasController::class,"update"]);
     Route::delete('/kelas/{id_kelas}',[KelasController::class,"delete"]);
     Route::get('/cari',[KelasController::class,"cari"]);
+    // Route::get('/nilai/pdf', [KelasController::class, 'pdf'])->name('pdf.generate');
+    Route::get('/nilai/pdf', [KelasController::class,"pdf"]);
+
 
 });
